@@ -1,7 +1,6 @@
 # hello-world-from-quarkus
 Source code for a Hello, World ! Quarkus application
 
-
 ## GitPod integration
 
 To open the workspace, simply click on the *Open in Gitpod* button, or use [this link](https://gitpod.io/#https://github.com/k8s-operator-workshop/hello-world-from-quarkus).
@@ -25,10 +24,10 @@ See the [official documentation](https://www.gitpod.io/docs/getting-started/) of
 
   - run the following command:
 
-`quarkus create app com.workshop.operator:hello-world-from-quarkus  --extension=resteasy-reactive`
+`quarkus create app com.workshop.operator:hello-world-from-quarkus-solution  --extension=resteasy-reactive`
 
 ```bash
-$ quarkus create app com.workshop.operator:hello-world-from-quarkus  --extension=resteasy-reactive
+$ quarkus create app com.workshop.operator:hello-world-from-quarkus-solution  --extension=resteasy-reactive
 
 Picked up JAVA_TOOL_OPTIONS:  -Xmx3489m
 -----------
@@ -47,11 +46,11 @@ applying codestarts...
 
 -----------
 [SUCCESS] ✅  quarkus project has been successfully generated in:
---> /workspace/hello-world-from-quarkus-workshop/hello-world-from-quarkus
+--> /workspace/hello-world-from-quarkus-solution/hello-world-from-quarkus-solution
 -----------
 Navigate into this directory and get started: quarkus dev
 ```
-  - copy all the code in the `/workspace/hello-world-from-quarkus-workshop/hello-world-from-quarkus` folder in the root of the workspace, **don't copy the README.md to not override the initial README.md**
+  - copy all the code in the `/workspace/hello-world-from-quarkus-workshop-solution/hello-world-from-quarkus-solution` folder in the root of the workspace, **don't copy the README.md to not override the initial README.md**
   - in the explorer view of VScode the following tree structure was created:
 ```bash
 .
@@ -103,7 +102,7 @@ Press [r] to resume testing, [o] Toggle test output, [:] for the terminal, [h] f
 ```
   - test the greeting end point: `curl http://<8080-gitpoduser-helloworld-gitpodadresse>`
 ```bash
-$ curl https://8080-philipparts-helloworldf-3qdxnpakspl.ws-eu64.gitpod.io/
+$ curl https://8080-philipparts-helloworldf-3qdxnpakspl.ws-eu64.gitpod.io/hello
 Hello from RESTEasy Reactive
 ```
 
@@ -166,9 +165,9 @@ Press [r] to re-run, [o] Toggle test output, [:] for the terminal, [h] for more 
 
 ### Release and tag the application
   - create the JAR: `mvn clean package`
-  - create the docker image: `docker build -f src/main/docker/Dockerfile.jvm -t 56hkk1xk.gra7.container-registry.ovh.net/workshop/<username>hello-world-from-quarkus:1.0.0 .`, for example `docker build -f src/main/docker/Dockerfile.jvm -t 56hkk1xk.gra7.container-registry.ovh.net/workshop/wilda/hello-world-from-quarkus:1.0.0 .`
+  - create the docker image: `docker build -f src/main/docker/Dockerfile.jvm -t 56hkk1xk.gra7.container-registry.ovh.net/workshop/<username>/hello-world-from-quarkus-solution:1.0.0 .`, for example `docker build -f src/main/docker/Dockerfile.jvm -t 56hkk1xk.gra7.container-registry.ovh.net/workshop/wilda/hello-world-from-quarkus-solution:1.0.0 .`
   - connect the docker client to the Harbor registry: `docker login 56hkk1xk.gra7.container-registry.ovh.net`
-  - push the image previously created: `docker push 56hkk1xk.gra7.container-registry.ovh.net/workshop/<username>/hello-world-from-quarkus:1.0.0`, for example `docker push 56hkk1xk.gra7.container-registry.ovh.net/workshop/wilda/hello-world-from-quarkus:1.0.0`
+  - push the image previously created: `docker push 56hkk1xk.gra7.container-registry.ovh.net/workshop/<username>/hello-world-from-quarkus-solution:1.0.0`, for example `docker push 56hkk1xk.gra7.container-registry.ovh.net/workshop/wilda/hello-world-from-quarkus-solution:1.0.0`
   - push all the code to the repository
   - create the release 1.0.0 in Github: see [official documentation](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases)
 > Note that the GitHub release version must be the same that the previously created docker image created  
