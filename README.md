@@ -50,39 +50,7 @@ applying codestarts...
 -----------
 Navigate into this directory and get started: quarkus dev
 ```
-  - copy all the code in the `/workspace/hello-world-from-quarkus-workshop-solution/hello-world-from-quarkus-solution` folder in the root of the workspace, **don't copy the README.md to not override the initial README.md**
-  - in the explorer view of VScode the following tree structure was created:
-```bash
-.
-├── README.md
-├── mvnw
-├── mvnw.cmd
-├── pom.xml
-└── src
-    ├── main
-    │   ├── docker
-    │   │   ├── Dockerfile.jvm
-    │   │   ├── Dockerfile.legacy-jar
-    │   │   ├── Dockerfile.native
-    │   │   └── Dockerfile.native-micro
-    │   ├── java
-    │   │   └── com
-    │   │       └── workshop
-    │   │           └── operator
-    │   │               └── GreetingResource.java
-    │   └── resources
-    │       ├── META-INF
-    │       │   └── resources
-    │       │       └── index.html
-    │       └── application.properties
-    └── test
-        └── java
-            └── com
-                └── workshop
-                    └── operator
-                        ├── GreetingResourceIT.java
-                        └── GreetingResourceTest.java
-```
+  - go to the created directory `hello-world-from-quarkus-solution`
   - test the generated application by launching the `quarkus dev` command:
 ```bash
 Listening for transport dt_socket at address: 5005
